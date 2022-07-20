@@ -38,6 +38,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('post.index')}}">Post</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('siswa.index')}}">Siswa</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

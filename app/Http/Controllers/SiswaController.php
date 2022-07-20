@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Post;
+use App\Models\Siswa;
 
-class PostController extends Controller
+class SiswaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +19,8 @@ class PostController extends Controller
 
     public function index()
     {
-        $a = Post::all();
-        return view('post.index' , ['posts' => $a]);
+        $a = Siswa::all();
+        return view('siswa.index' , ['siswa' => $a]);
     }
 
     /**
@@ -30,8 +30,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        // 
-        return view('post.create');
+        return view('siswa.create');
     }
 
     /**
@@ -42,19 +41,21 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        
         $validated = $request->validate([
-            'title' => 'required|unique:posts|max:225',
-            'content' => 'required',
+            'nis' => 'required',
+            'nama_siswa' => 'required',
+            'alamat_siswa' => 'required',
+            'tanggal_lahir' => 'required',
         ]);
 
-        $post = new Post();
-        $post->title = $request->title;
-        $post->content = $request->content;
-        $post->save();
-        return redirect()->route('post.index')->with('succes',
+        $siswa = new Siswa();
+        $siswa->nis = $request->nis;
+        $siswa->nama_siswa = $request->nama_siswa;
+        $siswa->alamat_siswa = $request->alamat_siswa;
+        $siswa->tanggal_lahir = $request->tanggal_lahir;
+        $siswa->save();
+        return redirect()->route('siswa.index')->with('success',
         'Data berhasil dibuat!');
-        
     }
 
     /**
@@ -66,8 +67,8 @@ class PostController extends Controller
     public function show($id)
     {
         //
-        $post = Post::findorFail($id);
-        return view('post.show' , compact('post'));
+        $siswa = Siswa::findorFail($id);
+        return view('siswa.show' , compact('siswa'));
     }
 
     /**
@@ -79,8 +80,8 @@ class PostController extends Controller
     public function edit($id)
     {
         //
-        $post = Post::findorFail($id);
-        return view('post.edit' , compact('post'));
+        $siswa = Siswa::findorFail($id);
+        return view('siswa.edit' , compact('siswa'));
     }
 
     /**
@@ -94,15 +95,19 @@ class PostController extends Controller
     {
         //
         $validated = $request->validate([
-            'title' => 'required|unique:posts|max:225',
-            'content' => 'required',
+            'nis' => 'required',
+            'nama_siswa' => 'required',
+            'alamat_siswa' => 'required',
+            'tanggal_lahir' => 'required',
         ]);
 
-        $post = Post::findorFail($id);
-        $post->title = $request->title;
-        $post->content = $request->content;
-        $post->save();
-        return redirect()->route('post.index')->with('succes',
+        $siswa = Siswa::findorFail($id);
+        $siswa->nis = $request->nis;
+        $siswa->nama_siswa = $request->nama_siswa;
+        $siswa->alamat_siswa = $request->alamat_siswa;
+        $siswa->tanggal_lahir = $request->tanggal_lahir;
+        $siswa->save();
+        return redirect()->route('siswa.index')->with('success',
         'Data berhasil dibuat!');
     }
 
@@ -115,9 +120,9 @@ class PostController extends Controller
     public function destroy($id)
     {
         //
-        $post = Post::findorFail($id);
-        $post->delete();
-        return redirect()->route('post.index')->with('succes',
+        $siswa = Siswa::findorFail($id);
+        $siswa->delete();
+        return redirect()->route('siswa.index')->with('succes',
         'Data berhasil dibuat!');
     }
 }

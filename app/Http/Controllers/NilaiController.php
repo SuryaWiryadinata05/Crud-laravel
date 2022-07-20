@@ -3,24 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Post;
 
-class PostController extends Controller
+class NilaiController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
-        $a = Post::all();
-        return view('post.index' , ['posts' => $a]);
+        //
     }
 
     /**
@@ -30,8 +23,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        // 
-        return view('post.create');
+        //
     }
 
     /**
@@ -42,19 +34,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        
-        $validated = $request->validate([
-            'title' => 'required|unique:posts|max:225',
-            'content' => 'required',
-        ]);
-
-        $post = new Post();
-        $post->title = $request->title;
-        $post->content = $request->content;
-        $post->save();
-        return redirect()->route('post.index')->with('succes',
-        'Data berhasil dibuat!');
-        
+        //
     }
 
     /**
@@ -66,8 +46,6 @@ class PostController extends Controller
     public function show($id)
     {
         //
-        $post = Post::findorFail($id);
-        return view('post.show' , compact('post'));
     }
 
     /**
@@ -79,8 +57,6 @@ class PostController extends Controller
     public function edit($id)
     {
         //
-        $post = Post::findorFail($id);
-        return view('post.edit' , compact('post'));
     }
 
     /**
@@ -93,17 +69,6 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $validated = $request->validate([
-            'title' => 'required|unique:posts|max:225',
-            'content' => 'required',
-        ]);
-
-        $post = Post::findorFail($id);
-        $post->title = $request->title;
-        $post->content = $request->content;
-        $post->save();
-        return redirect()->route('post.index')->with('succes',
-        'Data berhasil dibuat!');
     }
 
     /**
@@ -115,9 +80,5 @@ class PostController extends Controller
     public function destroy($id)
     {
         //
-        $post = Post::findorFail($id);
-        $post->delete();
-        return redirect()->route('post.index')->with('succes',
-        'Data berhasil dibuat!');
     }
 }

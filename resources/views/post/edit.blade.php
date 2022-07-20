@@ -13,10 +13,10 @@
                             @method('put')
                             @csrf
                             <div class="mb-3">
-                                <label for="">Tittle</label>
-                                <input type="text" name="tittle" value="{{ $post->tittle }}"
-                                    class="form-control @error('tittle') is-invalid @enderror">
-                                @error('tittle')
+                                <label for="">Title</label>
+                                <input type="text" name="title" value="{{ $post->title }}"
+                                    class="form-control @error('title') is-invalid @enderror">
+                                @error('title')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

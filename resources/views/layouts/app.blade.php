@@ -36,7 +36,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('post.index')}}"></a>
+                            <a class="nav-link" href="{{route('post.index')}}">Post</a>
                         </li>
                     </ul>
 
@@ -87,7 +87,7 @@
     <script type="text/javascript" src="DataTables/datatables.min.js"></script>
     <script>
         $(document).ready(function(){
-            $('#datatable').datatable();
+            $('#dataTable').dataTable();
         });
     </script>
 </body>

@@ -12,10 +12,10 @@
                         <form action="{{ route('post.store') }}" method="post">
                             @csrf
                             <div class="mb-3">
-                                <label for="">Tittle</label>
-                                <input type="text" name="tittle"
-                                    class="form-control @error('tittle') is-invalid @enderror">
-                                @error('tittle')
+                                <label for="">title</label>
+                                <input type="text" name="title"
+                                    class="form-control @error('title') is-invalid @enderror">
+                                @error('title')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

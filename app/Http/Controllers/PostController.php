@@ -44,7 +44,7 @@ class PostController extends Controller
     {
         //
         $validated = $request->validate([
-            'tittle' => 'required|unique:posts|max:225',
+            'title' => 'required|unique:posts|max:225',
             'content' => 'required',
         ]);
 
@@ -52,7 +52,7 @@ class PostController extends Controller
         $post->tittle = $request->tittle;
         $post->content = $request->content;
         $post->save();
-        return redirect()->route('post.index')->with('succes',
+        return redirect()->route('post.index')->with('success',
         'Data berhasil dibuat!');
         
     }
@@ -94,7 +94,7 @@ class PostController extends Controller
     {
         //
         $validated = $request->validate([
-            'tittle' => 'required|unique:posts|max:225',
+            'title' => 'required|unique:posts|max:225',
             'content' => 'required',
         ]);
 
@@ -102,7 +102,7 @@ class PostController extends Controller
         $post->tittle = $request->tittle;
         $post->content = $request->content;
         $post->save();
-        return redirect()->route('post.index')->with('succes',
+        return redirect()->route('post.index')->with('success',
         'Data berhasil dibuat!');
     }
 

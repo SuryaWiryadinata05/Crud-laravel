@@ -14,9 +14,9 @@ class PostTableSeeder extends Seeder
     public function run()
     {
         $sampel = [
-            ['tittle' => 'Tips Cepat Nikah' , 'content' => 'lorem ipsum'],
-            ['tittle' => 'Haruskah menunda Nikah ?' , 'content' => 'lorem ipsum'],
-            ['tittle' => 'Membangun Visi Misi Keluarga' , 'content' => 'lorem ipsum']
+            ['title' => 'Tips Cepat Nikah' , 'content' => 'lorem ipsum'],
+            ['title' => 'Haruskah menunda Nikah ?' , 'content' => 'lorem ipsum'],
+            ['title' => 'Membangun Visi Misi Keluarga' , 'content' => 'lorem ipsum']
         ];
 
         DB::table('posts')->insert($sampel);

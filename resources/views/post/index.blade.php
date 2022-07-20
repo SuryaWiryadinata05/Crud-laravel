@@ -28,7 +28,7 @@
                                     @foreach ($posts as $data)
                                         <tr>
                                             <td>{{ $no++ }}</td>
-                                            <td>{{ $data->tittle }}</td>
+                                            <td>{{ $data->title }}</td>
                                             <td>{{ $data->content }}</td>
                                             <td>
                                                 <form action="{{ route('post.destroy', $data->id) }}" method="post">

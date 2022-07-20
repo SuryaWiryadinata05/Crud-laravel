@@ -11,8 +11,8 @@
                     <div class="card-body">
 
                         <div class="mb-3">
-                            <label for="">Tittle</label>
-                            <input type="text" name="tittle" value="{{ $post->tittle }}" class="form-control" readonly>
+                            <label for="">Title</label>
+                            <input type="text" name="title" value="{{ $post->title }}" class="form-control" readonly>
                         </div>
                         <div class="mb-3">
                             <label for="">Content</label>
